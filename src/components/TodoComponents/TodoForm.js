@@ -3,6 +3,7 @@ import React from 'react';
 // Todo Form
 
 class TodoForm extends React.Component {
+    /*will hold your input field and your Add Todo and Clear Completed buttons. */
     render() {
         return (
             <>

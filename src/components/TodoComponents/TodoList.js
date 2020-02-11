@@ -7,6 +7,7 @@ import React from 'react';
 
 
 class TodoList extends React.Component {
+    // receives your Todos array and iterates over the list generating a new <Todo /> for each element 
     render() {
     return (
         <>

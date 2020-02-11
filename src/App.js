@@ -1,8 +1,9 @@
 import React from 'react';
+import uuid from 'react-uuid';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList'
 import Todo from './components/TodoComponents/Todo';
-// import Todo from './components/TodoComponents/Todo'
+
 
 class App extends React.Component {
   constructor() {
@@ -10,19 +11,19 @@ class App extends React.Component {
     this.state ={
       data: [{
         task: 'Work on Projects',
-        id: Date.now(),
+        id: uuid(),
         completed: false
       },
 
       {
         task: 'Take a Break',
-        id: Date.now(),
+        id: uuid(),
         completed: false
       },
 
       {
         task: 'Eat Lunch with Son',
-        id: Date.now(),
+        id: uuid(),
         completed: false
       }
     
@@ -35,10 +36,11 @@ class App extends React.Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     const name = 'Dajuan'
-    console.log(this.state.data)
+    const props = this.state.data;
+    console.log(props)
     return (
       <>
-      <Todo key={this.state.id} data={this.state.data}/>
+      <Todo key={props.id} data={props}/>
       <TodoList />
      
       <div>
@@ -50,26 +52,17 @@ class App extends React.Component {
   }
 
   updateList = (e) => {
-    this.setState({ data: e.target.value})
+    this.setState({ data: e.target.value});
+    console.log('updateList')
   }
-
-//   taskComplete = task => {
-//     const todoItem = [...this.state.data];
-//     todoItem.filter(task => 
-//         task.task === task
-//     ).map(task => (task.completed = !task.completed))
-//     this.setState(todoItem);
-    
-// }
-
   
 
   componentDidMount = () => {
-    const todos = localStorage.getItem('todos')
-    // const persistantData = JSON.parse('todos')
+    const data = localStorage.getItem('data')
+    const persistantData = JSON.stringify('data')
     // this is async
-    // this.setState({ todos: persistantData});
-    todos ? console.log(todos) : console.log('no todos')
+    this.setState({todos: persistantData});
+    data ? console.log(data) : console.log('no data')
   }
 }
 
