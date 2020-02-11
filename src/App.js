@@ -7,7 +7,7 @@ class App extends React.Component {
     super();
     this.state ={
       data: [{
-        title: '',
+        task: '',
         id: Date.now(),
         completed: false
       }]
