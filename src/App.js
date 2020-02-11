@@ -1,7 +1,8 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList'
-import Todo from './components/TodoComponents/Todo'
+import Todo from './components/TodoComponents/Todo';
+// import Todo from './components/TodoComponents/Todo'
 
 class App extends React.Component {
   constructor() {
@@ -37,12 +38,13 @@ class App extends React.Component {
     console.log(this.state.data)
     return (
       <>
+      <Todo key={this.state.id} data={this.state.data}/>
+      <TodoList />
+     
       <div>
         <h2>Welcome to {name}'s' Todo App!</h2>
       </div>
-      <Todo key={this.state.id} data={this.state.data}/>
       <TodoForm onChange={(e) => this.updateList(e)} name='form'/>
-      <TodoList/>
       </> 
     );
   }
@@ -50,6 +52,15 @@ class App extends React.Component {
   updateList = (e) => {
     this.setState({ data: e.target.value})
   }
+
+//   taskComplete = task => {
+//     const todoItem = [...this.state.data];
+//     todoItem.filter(task => 
+//         task.task === task
+//     ).map(task => (task.completed = !task.completed))
+//     this.setState(todoItem);
+    
+// }
 
   
 

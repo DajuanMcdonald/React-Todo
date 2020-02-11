@@ -1,6 +1,8 @@
 import React from 'react'
+// Todo Item
 
 class Todo extends React.Component {
+    
     render() {
         
         
@@ -21,6 +23,8 @@ class Todo extends React.Component {
         
         
     }
+
+    
 }
 
 export default Todo;
