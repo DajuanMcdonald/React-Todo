@@ -40,8 +40,9 @@ class App extends React.Component {
       <div>
         <h2>Welcome to {name}'s' Todo App!</h2>
       </div>
+      <Todo key={this.state.id} data={this.state.data}/>
       <TodoForm onChange={(e) => this.updateList(e)} name='form'/>
-      <Todo data={this.state.data}/>
+      <TodoList/>
       </> 
     );
   }
