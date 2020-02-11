@@ -1,12 +1,13 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
+import TodoList from './components/TodoComponents/TodoList'
 
 class App extends React.Component {
   constructor() {
     super();
     this.state ={
       data: [{
-        task: '',
+        title: '',
         id: Date.now(),
         completed: false
       }]
@@ -23,9 +24,24 @@ class App extends React.Component {
       <div>
         <h2>Welcome to {name}'s' Todo App!</h2>
       </div>
-      <TodoForm/>
-      </>
+      <TodoForm onChange={(e) => this.updateList(e)} name='form'/>
+      <TodoList/>
+      </> 
     );
+  }
+
+  updateList = (e) => {
+    this.setState({ data: e.target.value})
+  }
+
+  
+
+  componentDidMount = () => {
+    const todos = localStorage.getItem('todos')
+    // const persistantData = JSON.parse('todos')
+    // this is async
+    // this.setState({ todos: persistantData});
+    todos ? console.log(todos) : console.log('no todos')
   }
 }
 

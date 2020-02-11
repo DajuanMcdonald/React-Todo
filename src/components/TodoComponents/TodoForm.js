@@ -1,13 +1,18 @@
 import React from 'react';
+// this is where we Add the todo Item to the ToDo List
 
-const TodoForm = props => {
-    return (
-        <>
-        <input type='text' placeholder='User Input'></input>
-        <input type='submit' value='Add Todo'></input>
-        <input type='button' value='Clear Completed'></input>
-        </>
-    )
+class TodoForm extends React.Component {
+    render() {
+        return (
+            <>
+                <form>
+                    <input name='input' type='text' placeholder='User Input'></input>
+                    <input name='add' type='submit' value='Add Todo'></input>
+                    <input name='clear' type='button' value='Clear Completed'></input>
+                </form>
+            </>
+        )
+    }
 }
 
 export default TodoForm;
