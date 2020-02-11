@@ -2,13 +2,13 @@ import React from 'react'
 
 class Todo extends React.Component {
     render() {
-        return (
-            <div>
-                <p>Todo Item</p>
-                
-                
-            </div>
+        return this.props.data.map( item => (
+            <p>
+                {item.task}
+            </p>
         )
+
+        );
     }
 }
 
