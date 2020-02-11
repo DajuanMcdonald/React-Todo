@@ -5,6 +5,11 @@ class App extends React.Component {
   constructor() {
     super();
     this.state ={
+      data: [{
+        task: '',
+        id: Date.now(),
+        completed: false
+      }]
 
     }
   }
