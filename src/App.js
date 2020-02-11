@@ -7,10 +7,24 @@ class App extends React.Component {
     super();
     this.state ={
       data: [{
-        task: '',
+        task: 'Work on Projects',
         id: Date.now(),
         completed: false
-      }]
+      },
+
+      {
+        task: 'Take a Break',
+        id: Date.now(),
+        completed: false
+      },
+
+      {
+        task: 'Eat Lunch with Son',
+        id: Date.now(),
+        completed: false
+      }
+    
+    ]
 
     }
   }
