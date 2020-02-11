@@ -1,8 +1,9 @@
 import React from 'react';
 import uuid from 'react-uuid';
 import TodoForm from './components/TodoComponents/TodoForm';
-import TodoList from './components/TodoComponents/TodoList'
+// import TodoList from './components/TodoComponents/TodoList'
 import Todo from './components/TodoComponents/Todo';
+
 
 
 class App extends React.Component {
@@ -11,7 +12,7 @@ class App extends React.Component {
     this.state ={
       data: [{
         task: 'Work on Projects',
-        id: uuid(),
+        id: Date.now(),
         completed: false
       },
 
@@ -40,8 +41,10 @@ class App extends React.Component {
     console.log(props)
     return (
       <>
-      <Todo key={props.id} data={props}/>
-      <TodoList />
+      
+      <Todo key={props.id} data={props} />
+
+      
      
       <div>
         <h2>Welcome to {name}'s' Todo App!</h2>

@@ -2,6 +2,7 @@
 // feel free to change this component.js into TodoList.js
 // Todo List
 import React from 'react';
+import Todo from './Todo';
 
 
 
@@ -9,18 +10,21 @@ import React from 'react';
 class TodoList extends React.Component {
     // receives your Todos array and iterates over the list generating a new <Todo /> for each element 
     render() {
-    return (
-        <>
-        
-        <div>Hello from TodList Component</div>
-       
-        </>
-    )
+
+        return this.props.data.map( item => (
+        <Todo data={item.task}/>
+            
+            )
+        ) 
+            
+                
+                
+            
+                
+            
     }
 
-    // TodoList.propTypes = {
-    //     data: PropTypes.array.isRequired
-    // }
+
 }
 
 export default TodoList;
