@@ -1,0 +1,15 @@
+.App {
+    background: black;
+    color: white;
+    width: 50vw;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.todo-container {
+    border: 1px solid grey;
+}
+
+.todo-item {
+    color: green;
+}

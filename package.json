@@ -6,7 +6,12 @@
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-scripts": "^3.3.1",
+<<<<<<< HEAD
     "react-uuid": "^1.0.2"
+=======
+    "react-uuid": "^1.0.2",
+    "uuid": "^3.4.0"
+>>>>>>> fbf500e50a7cbe0947f1b4c17fa6167e7129e7a8
   },
   "scripts": {
     "start": "react-scripts start",
