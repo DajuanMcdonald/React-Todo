@@ -1,12 +1,13 @@
 import React from 'react';
 import uuid from 'react-uuid';
 import TodoForm from './components/TodoComponents/TodoForm';
-// import TodoList from './components/TodoComponents/TodoList'
-import Todo from './components/TodoComponents/Todo';
+import TodoList from './components/TodoComponents/TodoList'
+
 
 
 
 class App extends React.Component {
+
   constructor() {
     super();
     this.state ={
@@ -32,41 +33,74 @@ class App extends React.Component {
 
     }
   }
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
+
+  addTodo = (event, item) => {
+    event.preventDefault();
+
+    const newTodo = {
+      task: item,
+      id: uuid(),
+      completed: false
+    };
+
+    this.setState({
+      data: [...this.state.data, newTodo]
+    })
+  }
+
+  toggleTodo = itemId => {
+    console.log(itemId);
+
+    this.setState({
+      data: this.state.data.map(todo => {
+        if (itemId === todo.id) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          };
+        }
+
+        return todo;
+      })
+    })
+  }
+
+  clearList = e => { 
+    e.preventDefault();
+    this.setState({
+      data: this.state.data.filter(todo => todo.completed === false)
+    })
+  }
+
+  
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     const name = 'Dajuan'
-    const props = this.state.data;
-    console.log(props)
+    // const props = this.state.data;
+    // console.log(props)
     return (
-      <>
-      
-      <Todo key={props.id} data={props} />
+      < div className="App">
+      <h2>Welcome to {name}'s' Todo App!</h2>
 
-      
-     
+        <h2>Todo List</h2>
       <div>
-        <h2>Welcome to {name}'s' Todo App!</h2>
+        <TodoList
+        data={this.state.data}
+        toggleTodo={this.toggleTodo}
+        clearList={this.clearList}
+        />
+
       </div>
-      <TodoForm onChange={(e) => this.updateList(e)} name='form'/>
-      </> 
+          <TodoForm addTodo={this.addTodo}
+
+          />
+      </div> 
     );
   }
 
-  updateList = (e) => {
-    this.setState({ data: e.target.value});
-    console.log('updateList')
-  }
   
 
-  componentDidMount = () => {
-    const data = localStorage.getItem('data')
-    const persistantData = JSON.stringify('data')
-    // this is async
-    this.setState({todos: persistantData});
-    data ? console.log(data) : console.log('no data')
-  }
+  
 }
 
 export default App;
