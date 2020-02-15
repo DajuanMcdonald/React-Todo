@@ -2,8 +2,13 @@ import React from 'react';
 import uuid from 'react-uuid';
 import TodoForm from './components/TodoComponents/TodoForm';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import TodoList from './components/TodoComponents/TodoList'
 
+=======
+// import TodoList from './components/TodoComponents/TodoList'
+import Todo from './components/TodoComponents/Todo';
+>>>>>>> bb64e70f7a728b63b34d9e72c4e724a4c9e06579
 
 
 
@@ -101,7 +106,17 @@ class App extends React.Component {
 
   
 
+<<<<<<< HEAD
   
+=======
+  componentDidMount = () => {
+    const data = localStorage.getItem('data')
+    const persistantData = JSON.stringify('data')
+    // this is async
+    this.setState({todos: persistantData});
+    data ? console.log(data) : console.log('no data')
+  }
+>>>>>>> bb64e70f7a728b63b34d9e72c4e724a4c9e06579
 =======
 import TodoList from './components/TodoComponents/TodoList';
 import "./components/TodoComponents/Todo.css";
@@ -199,7 +214,11 @@ class App extends React.Component {
         );
     }
 
+<<<<<<< HEAD
 >>>>>>> 85b884fa788731b010c574942438cae94bf29d79
+=======
+>>>>>>> fbf500e50a7cbe0947f1b4c17fa6167e7129e7a8
+>>>>>>> bb64e70f7a728b63b34d9e72c4e724a4c9e06579
 }
 
 export default App;

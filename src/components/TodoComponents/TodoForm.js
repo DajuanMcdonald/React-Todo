@@ -43,6 +43,18 @@ class TodoForm extends Component {
 
 export default TodoForm;
 =======
+<<<<<<< HEAD
+=======
+// will hold your input field and your Add Todo and Clear Completed buttons
+import React, {Component} from 'react';
+import uuid from 'react-uuid';
+
+class TodoForm extends Component {
+    constructor() {
+        super();
+        this.state = {
+            task: '',
+>>>>>>> bb64e70f7a728b63b34d9e72c4e724a4c9e06579
             id: uuid(),
             completed: false
         }
@@ -82,4 +94,8 @@ export default TodoForm;
 }
 
 export default TodoForm;
+<<<<<<< HEAD
 >>>>>>> 85b884fa788731b010c574942438cae94bf29d79
+=======
+>>>>>>> fbf500e50a7cbe0947f1b4c17fa6167e7129e7a8
+>>>>>>> bb64e70f7a728b63b34d9e72c4e724a4c9e06579
