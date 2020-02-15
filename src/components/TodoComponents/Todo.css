@@ -1,0 +1,11 @@
+.App {
+
+}
+
+.todo-container {
+    border: 1px solid grey;
+}
+
+.todo-item {
+    color: green;
+}
